@@ -1,0 +1,45 @@
+.signup__wrapper,
+.login__wrapper {
+    background-color: #fff;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.login__content {
+    margin: 10px 0;
+}
+
+.signup__wrapper_link,
+.login__wrapper_link {
+    margin-top: 20px;
+    margin-left: 2px;
+}
+
+.signup__link,
+.login__link {
+    color: black;
+}
+
+.btn {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.signup__content {
+    margin: 10px 0;
+}
+
+.login__title,
+.signup__title {
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
+}

@@ -1,0 +1,16 @@
+.wrapper {
+    border-radius: 15px;
+    background-color: #fff;
+
+}
+
+.statistics{
+    padding: 10px;
+}
+
+.statistics img{
+    width: 100px;
+    height: 100px;
+}
+
+.username {}

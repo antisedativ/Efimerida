@@ -22,7 +22,10 @@ const Login = props => {
     }
     return (
         <Container className={cl.login__wrapper}>
-            <Form>
+            <Form className={cl.login__content}>
+                <p className={cl.login__title}>
+                    Login
+                </p>
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
@@ -42,11 +45,11 @@ const Login = props => {
                         onChange={onChangePassword}
                     />
                 </Form.Group>
-                <Button className={cl.login__btn} variant="dark" onClick={login}>
+                <Button className={cl.btn} variant="dark" onClick={login}>
                     Login
                 </Button>
                 <div className={cl.login__wrapper_link}>
-                    <NavLink  to={"/signup"} className={cl.login__link}>Регистрация</NavLink>
+                    Don’t have an account? <NavLink  to={"/signup"} className={cl.login__link}> Join Efimerida</NavLink>
                 </div>
             </Form>
         </Container>

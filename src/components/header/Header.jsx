@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Nav, Navbar} from "react-bootstrap";
+import { FiUser } from "react-icons/fi";
 import {Link} from "react-router-dom";
 
 function Header() {
@@ -11,13 +12,13 @@ function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav  className="justify-content-end flex-grow-1 pe-1">
-                        <Link  class="nav-link" to={"/"}>Главная</Link>
-                        <Link  class="nav-link" to={"/create"}>Создать</Link>
-                        <Link  class="nav-link" to={"/notes"}>Заметки</Link>
+                        <Link  class="nav-link" to={"/"}>All streams</Link>
+                        <Link  class="nav-link" to={"/create"}>Create post</Link>
+                        <Link  class="nav-link" to={"/bookmarks"}>Bookmarks</Link>
                         {user ? (
-                            <Link class="nav-link" to={'/logout'}>Выйти {user}</Link>
+                            <Link class="nav-link" to={'/logout'}><FiUser/> Log out {user}</Link>
                         ) : (
-                            <Link class="nav-link" to={'/login'}>Войти</Link>
+                            <Link class="nav-link" to={'/login'}><FiUser/> Login</Link>
                         )}
                     </Nav>
                 </Navbar.Collapse>
