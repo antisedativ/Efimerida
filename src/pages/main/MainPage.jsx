@@ -2,7 +2,7 @@ import React from 'react';
 import {Nav} from "react-bootstrap";
 import Post from "../../components/post/Post";
 
-const MainPage = () => {
+const MainPage = ({post}) => {
     return (
         <>
             <Nav  className="justify-content-center" variant="tabs" defaultActiveKey="link-0">
@@ -25,7 +25,7 @@ const MainPage = () => {
                     <Nav.Link eventKey="/link-5">Разработка</Nav.Link>
                 </Nav.Item>
             </Nav>
-            <Post />
+            <Post post={post} />
         </>
     );
 };

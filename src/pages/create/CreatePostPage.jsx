@@ -7,7 +7,7 @@ import CreatePostNews from "../../components/createPostNews/CreatePostNews";
 const CreatePostPage = () => {
     return (
         <div className={cl.wrapper}>
-            <CreatePost />
+            <CreatePost  />
             <CreatePostNews />
         </div>
     );

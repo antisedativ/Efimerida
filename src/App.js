@@ -1,6 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Routes, Route } from "react-router-dom";
-import {useState} from "react";
 
 import Header from "./components/header/Header";
 import MainPage from "./pages/main/MainPage";
@@ -8,7 +7,8 @@ import CreatePostPage from "./pages/create/CreatePostPage";
 import BookmarksPage from "./pages/bookmarks/BookmarksPage";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
-import axios from "axios";
+
+import {getAll} from "./services/data";
 
 function App(props) {
     // const [user, setUser] = useState(null);
@@ -31,27 +31,27 @@ function App(props) {
     // http://jservice.io/api/random?count=1
     // https://pokeapi.co/api/v2/pokemon/ditto
 
-    const getAll = () => {
-        return axios.get('http://127.0.0.1:8000/api/post/?format=json');
-    }
+    const [post, setPost] = useState([])
 
-    const retrieveTodos = () => {
-        getAll(props.token)
+    useEffect(() => {
+        getPosts()
+    },[setPost])
+
+    const getPosts = () => {
+        getAll()
             .then(response => {
-                console.log(response.data);
+                setPost(response.data);
             })
             .catch(e => {
                 console.log(e);
             });
     }
-    retrieveTodos()
-
     return (
     <div className="App">
         <Header />
         <div className="container mt-4">
             <Routes>
-                <Route exact path="/" element={<MainPage />} />
+                <Route exact path="/" element={<MainPage post={post}/>} />
                 <Route path="/create" element={<CreatePostPage />}/>
                 <Route path="/bookmarks" element={<BookmarksPage />}/>
                 <Route path="/login" element={<LoginPage />} {...props}/>

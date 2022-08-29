@@ -28,3 +28,16 @@ import axios from 'axios';
     // }
 // }
 // export default new DataService();
+
+// http://127.0.0.1:8000/api/post/?format=json
+// https://jsonplaceholder.typicode.com/posts?_start=1&_end=4
+
+export const getAll = () => {
+    return axios.get('http://127.0.0.1:8000/api/post/?format=json');
+}
+
+export const createPost = (data) => {
+    return axios.post("http://localhost:8000/api/post/", data);
+}
+
+
