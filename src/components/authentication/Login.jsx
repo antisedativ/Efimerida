@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import cl from './authentication.module.css'
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Login = props => {
     const [username, setUsername] = useState("");

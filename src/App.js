@@ -9,6 +9,7 @@ import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
 
 import {getAll} from "./services/data";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
 
 function App(props) {
     // const [user, setUser] = useState(null);
@@ -56,6 +57,7 @@ function App(props) {
                 <Route path="/bookmarks" element={<BookmarksPage />}/>
                 <Route path="/login" element={<LoginPage />} {...props}/>
                 <Route path="/signup" element={<SignupPage />} />
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>
     </div>
