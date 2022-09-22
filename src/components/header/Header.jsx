@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 function Header() {
     const user = null
+
     return (
         <Navbar collapseOnSelect  bg="dark" variant="dark" expand="lg">
             <Container>

@@ -8,23 +8,10 @@ import BookmarksPage from "./pages/bookmarks/BookmarksPage";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
 
-import {getAll} from "./services/data";
+import DataService from "./services/data";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 
 function App(props) {
-    // const [user, setUser] = useState(null);
-    // const [token, setToken] = useState(null);
-    // const [error, setError] = useState('');
-    //
-    // async function login(user = null) { // default user to null
-    //     setUser(user);
-    // }
-    // async function logout() {
-    //     setUser(null);
-    // }
-    // async function signup(user = null) { // default user to null
-    //     setUser(user);
-    // }
 
     // http://127.0.0.1:8000/api/post/?format=json
     // http://127.0.0.1:8000/api/post/
@@ -36,17 +23,15 @@ function App(props) {
 
     useEffect(() => {
         getPosts()
-    },[setPost])
+    },[])
 
-    const getPosts = () => {
-        getAll()
-            .then(response => {
-                setPost(response.data);
-            })
-            .catch(e => {
-                console.log(e);
-            });
+    const getPosts = async () => {
+        const response = await DataService.getAll()
+        console.log(response.data.post)
+        console.log(response)
+        setPost(response.data.post)
     }
+
     return (
     <div className="App">
         <Header />

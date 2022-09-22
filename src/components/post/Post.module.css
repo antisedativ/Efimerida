@@ -4,6 +4,34 @@
 }
 
 .post {
+    padding: 5px;
     width: 50rem;
+    height: 20rem;
     margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+}
+
+.statistics {
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 0;
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+}
+
+.author__name {
+}
+
+.create__date {
+}
+
+.img {
+    border-radius: 5px;
 }
