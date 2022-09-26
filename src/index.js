@@ -1,5 +1,5 @@
 import React from 'react';
-import "./index.css"
+import "./styles/index.css"
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
@@ -8,9 +8,9 @@ import {store} from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    //<Provider store={store}>
-        <BrowserRouter>
+    <BrowserRouter>
+        <Provider store={store}>
             <App />
-        </BrowserRouter>
-    //</Provider>
+        </Provider>
+    </BrowserRouter>
 );
