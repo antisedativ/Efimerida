@@ -39,6 +39,7 @@ const LoginPage = () => {
                 <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
+                        className='flat'
                         type="text"
                         placeholder="Enter username"
                         value={username}
@@ -49,6 +50,7 @@ const LoginPage = () => {
                 <Form.Group className="mb-3">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
+                        className='flat'
                         type="password"
                         placeholder="Enter password"
                         value={password}

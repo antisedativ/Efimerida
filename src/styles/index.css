@@ -6,3 +6,14 @@
 body {
     background-color: #f0f0f0;
 }
+
+.form-check-input:checked {
+    border-color: #808080;
+    background-color: #333333;
+}
+
+.form-check-input:focus,
+.flat:focus {
+    border-color: #808080;
+    box-shadow: 0 0 0 0.25rem rgb(105 105 105 / 25%);
+}

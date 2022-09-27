@@ -28,26 +28,29 @@ const SignupPage = () => {
                 <p className={cl.signup__title}>
                     Welcome Efimerida
                 </p>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
+                        className='flat'
                         type="email"
                         placeholder="Enter email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3" controlId="username">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
+                        className='flat'
                         type="text"
                         placeholder="Enter username"
                         value={username}
                         onChange={e => setUsername(e.target.value)}
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
+                        className='flat'
                         type="password"
                         placeholder="Password"
                         value={password}
@@ -56,7 +59,7 @@ const SignupPage = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Label>Repeat password</Form.Label>
-                    <Form.Control type="password" placeholder="Repeat password" />
+                    <Form.Control type="password" placeholder="Repeat password" className='flat'/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />

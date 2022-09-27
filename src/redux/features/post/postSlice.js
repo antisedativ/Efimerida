@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import myAxios from "../../../utils/axios";
-import axios from "axios";
+import axios from "../../../utils/axios";
 
 
 const initialState = {
@@ -10,10 +9,10 @@ const initialState = {
 
 export const createPosts = createAsyncThunk(
     'post/createPosts',
-    async () => {
+    async (postData) => {
         try {
             const config = { headers: {'Authorization': 'Token ' + window.localStorage.getItem('token') }}
-            const { data } = await myAxios.get('/post_list/', config)
+            const { data } = await axios.post('/post_list/',postData, config)
             return data
         } catch (e) {
             console.log(e)
@@ -26,7 +25,7 @@ export const getAllPosts = createAsyncThunk(
     async () => {
         try {
             const config = { headers: {'Authorization': 'Token ' + window.localStorage.getItem('token') }}
-            const { data } = await myAxios.get('/post_list/?format=json', config)
+            const { data } = await axios.get('/post_list/?format=json', config)
             return data
         } catch (e) {
             console.log(e)

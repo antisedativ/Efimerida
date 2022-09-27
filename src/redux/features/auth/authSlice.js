@@ -2,7 +2,6 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../../utils/axios";
 
 const initialState = {
-    user: null,
     token: null,
     isLoading: false
 }
@@ -17,8 +16,11 @@ export const registerUser = createAsyncThunk(
                 password
             })
 
-            if(data.token)
+            if(data.token) {
+                window.localStorage.setItem('user', username)
                 window.localStorage.setItem('token', data.token)
+            }
+            console.log(data)
             return data
         } catch (e) {
             console.log(e)
@@ -35,8 +37,10 @@ export const loginUser = createAsyncThunk(
                 password
             })
 
-            if(data.token)
+            if(data.token) {
+                window.localStorage.setItem('user', username)
                 window.localStorage.setItem('token', data.token)
+            }
             return data
         } catch (e) {
             console.log(e)
@@ -53,12 +57,11 @@ const authSlice = createSlice({
         [registerUser.pending]: (state) => {
             state.isLoading = true
         },
-        [registerUser.pending]: (state, action) => {
+        [registerUser.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.user = action.payload.user
             state.token = action.payload.token
         },
-        [registerUser.pending]: (state) => {
+        [registerUser.rejected]: (state) => {
             state.isLoading = false
         },
 
@@ -66,12 +69,12 @@ const authSlice = createSlice({
         [loginUser.pending]: (state) => {
             state.isLoading = true
         },
-        [loginUser.pending]: (state, action) => {
+        [loginUser.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.user = action.payload.user
             state.token = action.payload.token
+            console.log(action.payload)
         },
-        [loginUser.pending]: (state) => {
+        [loginUser.rejected]: (state) => {
             state.isLoading = false
         }
     }

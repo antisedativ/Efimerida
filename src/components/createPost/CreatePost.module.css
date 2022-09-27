@@ -17,3 +17,16 @@
 .settings__btn {
     width: 100%;
 }
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+.image img {
+    width: 60%;
+    height: 60%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
