@@ -1,0 +1,30 @@
+.wrapper {
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card__wrapper {
+    width: 70%;
+}
+
+.card__title {
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.card__statistics span{
+    margin-left: 5px;
+}
+
+.card__footer,
+.card__author {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__author span {
+    margin-left: 5px;
+}

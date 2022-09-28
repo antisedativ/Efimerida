@@ -13,6 +13,7 @@
 }
 
 .content {
+    height: 75%;
 }
 
 .statistics {
@@ -34,4 +35,23 @@
 
 .img {
     border-radius: 5px;
+}
+
+.btn__text,
+.btn__text:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    margin: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.post__text {
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

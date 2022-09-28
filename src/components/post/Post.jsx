@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import cl from './Post.module.css'
 import {FcLike} from "react-icons/fc";
-import {ListGroup} from "react-bootstrap";
+import {Button, ListGroup} from "react-bootstrap";
 import {AiOutlineEye} from "react-icons/ai";
 import moment from "moment/moment";
+import {Link} from "react-router-dom";
 
 function Post({post}) {
     return (
@@ -17,15 +18,16 @@ function Post({post}) {
                             <ListGroup.Item className={cl.author}>
                                 <span className={cl.author__name}>{post.post_author.username}</span>
                                 <span className={cl.create__date}>
-                                    {moment(post.post_created_date).format("Do MMMM YYYY")}
-                                </span>
+                                {moment(post.post_created_date).format("Do MMMM YYYY")}
+                            </span>
                             </ListGroup.Item>
                             <Card.Title>{post.post_title}</Card.Title>
-                            <Card.Text>
+                            <Card.Text className={cl.post__text}>
                                 {post.post_text}
                             </Card.Text>
                             <ListGroup.Item className={cl.statistics}><FcLike/> {post.post_likes} <span><AiOutlineEye/> {post.post_views} </span></ListGroup.Item>
                         </ListGroup>
+                        <Button variant="dark" className={cl.btn}><Link to={`post/${post.id}/`} className={cl.btn__text}>Read more...</Link></Button>
                     </Card.Body>
                 </Card>
             </div>

@@ -8,6 +8,7 @@ import BookmarksPage from "./pages/bookmarks/BookmarksPage";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import PostDetails from "./components/postDetails/PostDetails";
 
 function App(props) {
     return (
@@ -16,6 +17,7 @@ function App(props) {
         <div className="container mt-4">
             <Routes>
                 <Route exact path="/" element={<MainPage/>} />
+                <Route path="/post/:id/" element={<PostDetails />}/>
                 <Route path="/create" element={<CreatePostPage />}/>
                 <Route path="/bookmarks" element={<BookmarksPage />}/>
                 <Route path="/login" element={<LoginPage />} {...props}/>
