@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
+import './styles/index.css'
 
 import Header from "./components/header/Header";
 import MainPage from "./pages/main/MainPage";
@@ -9,8 +10,9 @@ import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PostDetails from "./components/postDetails/PostDetails";
+import Footer from "./components/footer/Footer";
 
-function App(props) {
+function App() {
     return (
     <div className="App">
         <Header />
@@ -20,11 +22,12 @@ function App(props) {
                 <Route path="/post/:id/" element={<PostDetails />}/>
                 <Route path="/create" element={<CreatePostPage />}/>
                 <Route path="/bookmarks" element={<BookmarksPage />}/>
-                <Route path="/login" element={<LoginPage />} {...props}/>
+                <Route path="/login" element={<LoginPage />}/>
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>
+        <Footer />
     </div>
   );
 }

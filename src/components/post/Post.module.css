@@ -5,15 +5,15 @@
 
 .post {
     padding: 5px;
-    width: 50rem;
+    width: 57rem;
     height: 20rem;
-    margin: 20px;
+    margin: 20px 0;
     display: flex;
     flex-direction: row;
 }
 
 .content {
-    height: 75%;
+    height: 85%;
 }
 
 .statistics {
@@ -51,7 +51,11 @@
 }
 
 .post__text {
-    height: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    margin: 0;
+    -webkit-line-clamp: 6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
