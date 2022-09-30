@@ -3,7 +3,7 @@ import {Accordion, Nav} from "react-bootstrap";
 import Post from "../../components/post/Post";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllPosts} from "../../redux/features/post/postSlice";
-import CreatePostNews from "../../components/createPostNews/CreatePostNews";
+import MainInfo from "../../components/mainPageInfo/MainInfo";
 
 const MainPage = () => {
     const dispatch = useDispatch()
@@ -44,11 +44,10 @@ const MainPage = () => {
                 </Nav.Item>
             </Nav>
             <Accordion defaultActiveKey="0">
-                <Accordion.Item eventKey="0" style={{width:"200px", marginTop:'20px'}}>
-                    <Accordion.Header>Accordion Item #1</Accordion.Header>
+                <Accordion.Item eventKey="0" style={{width: '57rem', marginTop:'20px'}}>
+                    <Accordion.Header>Sort by</Accordion.Header>
                     <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt m.
+
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
@@ -58,7 +57,7 @@ const MainPage = () => {
                         posts?.map((post, id) => <Post post={post} key={id} />)
                     }
                 </div>
-
+                <MainInfo />
             </div>
 
         </div>

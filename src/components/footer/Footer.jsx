@@ -13,7 +13,7 @@ const Footer = () => {
                         <p>© 2022 BS3 UI Kit, All rights reserved</p>
                     </div>
                     <div className="col-md-3 footer-nav animated fadeInUp">
-                        <h4>Menu —</h4>
+                        <h4>About —</h4>
                         <div className="col-md-6">
                             <ul className="list">
                                 <li><a href="#">About Us</a></li>
